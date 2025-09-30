@@ -36,19 +36,19 @@ jobs:
         components: rustfmt, clippy
 
     - name: Cache cargo registry
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cargo/registry
         key: ${{ runner.os }}-cargo-registry-${{ matrix.cache-key }}
 
     - name: Cache cargo index
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cargo/git
         key: ${{ runner.os }}-cargo-index-${{ matrix.cache-key }}
 
     - name: Cache cargo build
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: target
         key: ${{ runner.os }}-cargo-build-target-${{ matrix.cache-key }}-${{ hashFiles('**/Cargo.lock') }}
@@ -112,7 +112,7 @@ jobs:
         components: rustfmt, clippy
 
     - name: Cache cargo build
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: target
         key: ${{ runner.os }}-cargo-build-target-lint-${{ hashFiles('**/Cargo.lock') }}
@@ -162,7 +162,7 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
 
     - name: Cache cargo build
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: target
         key: ${{ runner.os }}-cargo-build-target-examples-${{ hashFiles('**/Cargo.lock') }}
@@ -196,7 +196,7 @@ jobs:
       run: cargo install cargo-criterion
 
     - name: Cache cargo build
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: target
         key: ${{ runner.os }}-cargo-build-target-benchmarks-${{ hashFiles('**/Cargo.lock') }}
@@ -223,7 +223,7 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
 
     - name: Cache cargo build
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: target
         key: ${{ runner.os }}-cargo-build-target-docs-${{ hashFiles('**/Cargo.lock') }}

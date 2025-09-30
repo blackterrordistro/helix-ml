@@ -1,5 +1,5 @@
 # 🌀 HelixML Docker Image
-FROM rust:1.75-slim-bullseye
+FROM rust:1.90-slim-bullseye
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \

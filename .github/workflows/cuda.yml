@@ -43,7 +43,7 @@ jobs:
         echo "PATH=/usr/local/cuda/bin:$PATH" >> $GITHUB_ENV
 
     - name: Cache cargo build
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: target
         key: ${{ runner.os }}-cargo-build-target-cuda-${{ matrix.cuda-version }}-${{ matrix.rust-version }}-${{ hashFiles('**/Cargo.lock') }}
@@ -128,7 +128,7 @@ jobs:
       run: cargo install cargo-criterion
 
     - name: Cache cargo build
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: target
         key: ${{ runner.os }}-cargo-build-target-cuda-bench-${{ hashFiles('**/Cargo.lock') }}

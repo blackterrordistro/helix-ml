@@ -49,7 +49,7 @@ arrow = "50.0"
 
 # Performance
 rayon = "1.8"
-criterion = "0.5"
+criterion = "0.7"
 
 # CUDA
 cudarc = "0.9"
